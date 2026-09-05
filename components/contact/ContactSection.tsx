@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Copy, Check } from "lucide-react";
-import { links, archive } from "@/data/portfolio";
+import { links, archive, profileLinks } from "@/data/portfolio";
 import { ArchiveButton } from "@/components/ui/ArchiveButton";
 import { ArchiveLink } from "@/components/ui/ArchiveLink";
 import { DownloadProgress } from "@/components/ui/DownloadProgress";
@@ -68,9 +68,19 @@ export function ContactSection() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <ArchiveButton variant="primary" onClick={handleCopyEmail} aria-live="polite">
             {copied ? <Check size={14} aria-hidden /> : <Copy size={14} aria-hidden />}
-            {copied ? "EMAIL COPIED" : links.email}
+            <span className="normal-case">{copied ? "Email copied" : links.email}</span>
           </ArchiveButton>
           <ArchiveButton onClick={handleDownloadResume}>RESUME</ArchiveButton>
+          {profileLinks.map((profileLink) => (
+            <ArchiveLink
+              key={profileLink.label}
+              href={profileLink.url}
+              external
+              onClick={() => playTone("tick")}
+            >
+              {profileLink.label}
+            </ArchiveLink>
+          ))}
           <ArchiveLink href="#index" onClick={() => playTone("tick")}>
             RETURN TO ARCHIVE INDEX
           </ArchiveLink>

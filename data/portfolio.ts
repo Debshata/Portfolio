@@ -30,6 +30,8 @@ export interface Links {
   email: string;
   linkedin: string;
   github: string;
+  kaggle: string;
+  leetcode: string;
   resume: string;
   qiskitProfile: string;
   researchRepo: string;
@@ -38,8 +40,10 @@ export interface Links {
 
 export const links: Links = {
   email: "debshatachoudhury@gmail.com",
-  linkedin: "ADD_LINKEDIN_URL",
-  github: "ADD_GITHUB_URL",
+  linkedin: "https://www.linkedin.com/in/debshata-choudhury-b2593a271/",
+  github: "https://github.com/Debshata",
+  kaggle: "https://www.kaggle.com/debshatachoudhury",
+  leetcode: "https://leetcode.com/u/debshata18/",
   resume: "/documents/debshata-choudhury-resume.pdf",
   qiskitProfile: "ADD_QISKIT_PROFILE_URL",
   researchRepo: "ADD_PROJECT_URL",
@@ -506,6 +510,14 @@ export const certifications: Credential[] = [
     title: "McKinsey Forward Program",
     url: "https://www.credly.com/badges/9f6b1fcb-5929-4571-8c35-bb3a9ad2c424/public_url"
   }
+];
+
+/** External profiles shown beside the résumé at the top and bottom of the archive. */
+export const profileLinks: { label: string; url: string }[] = [
+  { label: "GITHUB", url: links.github },
+  { label: "LINKEDIN", url: links.linkedin },
+  { label: "KAGGLE", url: links.kaggle },
+  { label: "LEETCODE", url: links.leetcode }
 ];
 
 export const navSections = [

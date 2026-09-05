@@ -12,9 +12,11 @@ const FILE_FIELDS: [string, string][] = [
 
 const CONTACT_FIELDS: [string, string, string][] = [
   ["EMAIL", links.email, `mailto:${links.email}`],
-  ["GITHUB", "[ADD_GITHUB_URL]", links.github],
-  ["LINKEDIN", "[ADD_LINKEDIN_URL]", links.linkedin],
-  ["RESUME", "[FILE]", links.resume]
+  ["GITHUB", "github.com/Debshata", links.github],
+  ["LINKEDIN", "in/debshata-choudhury", links.linkedin],
+  ["KAGGLE", "kaggle.com/debshatachoudhury", links.kaggle],
+  ["LEETCODE", "leetcode.com/u/debshata18", links.leetcode],
+  ["RESUME", "debshata-choudhury-resume.pdf", links.resume]
 ];
 
 export function AboutSection() {

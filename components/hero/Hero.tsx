@@ -1,6 +1,6 @@
 "use client";
 
-import { profile, links, archive, interests } from "@/data/portfolio";
+import { profile, links, archive, interests, profileLinks } from "@/data/portfolio";
 import { ArchiveHeroCanvas } from "./ArchiveHeroCanvas";
 import { ArchiveLink } from "@/components/ui/ArchiveLink";
 import { useTerminal } from "@/lib/terminal/TerminalContext";
@@ -55,6 +55,16 @@ export function Hero() {
               <ArchiveLink href={links.resume} download onClick={() => playTone("confirm")}>
                 RESUME
               </ArchiveLink>
+              {profileLinks.map((profileLink) => (
+                <ArchiveLink
+                  key={profileLink.label}
+                  href={profileLink.url}
+                  external
+                  onClick={() => playTone("tick")}
+                >
+                  {profileLink.label}
+                </ArchiveLink>
+              ))}
             </div>
 
             <dl className="grid grid-cols-2 gap-x-8 gap-y-3 border-t border-hair pt-6 sm:grid-cols-3">

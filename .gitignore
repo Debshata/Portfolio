@@ -11,3 +11,7 @@ out
 /DesignPortfolio.zip
 /.claude
 tsconfig.tsbuildinfo
+
+.vercel
+.env*
+/Resume Debshata Choudhury.pdf
