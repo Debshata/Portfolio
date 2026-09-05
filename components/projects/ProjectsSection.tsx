@@ -65,7 +65,7 @@ export function ProjectsSection() {
                 <h4 className="font-display text-[clamp(1.5rem,3.2vw,2.4rem)] uppercase leading-tight tracking-tight text-ink">
                   {project.project}
                 </h4>
-                <p className="font-body text-[15px] leading-snug text-ink/85 md:text-base">{project.title}</p>
+                <p className="font-body text-[15px] leading-snug text-accent md:text-base">{project.title}</p>
                 <span className="font-mono text-[11px] uppercase tracking-label text-accent-muted">
                   {project.achievement}
                 </span>
