@@ -133,7 +133,7 @@ export const hackathons: Hackathon[] = [
     solution: "Engineered 28 features and trained an XGBoost classifier with cross-validated optimisation to keep performance stable across folds.",
     result: "81.29% accuracy — first place at the Xylem Innovation Challenge.",
     project: "DropConnect",
-    title: "DropConnect",
+    title: "AI Water Disaster Risk Intelligence",
     achievement: "Winner — Xylem Innovation Challenge",
     description:
       "Risk-intelligence model for water disaster planning, built on 28 engineered features with cross-validated optimisation to keep predictions stable across folds.",
@@ -163,7 +163,7 @@ export const hackathons: Hackathon[] = [
     solution: "Built 112 engineered features and combined LightGBM with XGBoost through soft voting to stabilise the decision boundary.",
     result: "86.78% classification accuracy — 2nd Runner-Up at NASA Space Apps.",
     project: "Exoplanetarium",
-    title: "Exoplanetarium",
+    title: "ML Exoplanet Discovery",
     achievement: "2nd Runner-Up — NASA Space Apps",
     description:
       "Exoplanet classification pipeline using a LightGBM and XGBoost soft-voting ensemble over 112 engineered features drawn from scientific survey data.",
@@ -191,7 +191,7 @@ export const hackathons: Hackathon[] = [
     solution: "Transfer-learned ResNet34, ConvNeXt and EfficientNetV2 backbones across both tracks using PyTorch and Keras.",
     result: "83.87% TB accuracy and 82.02% wound CV accuracy — Top 50 at IIIT-Delhi HORIBA Hack4Health.",
     project: "MediConnect",
-    title: "MediConnect",
+    title: "Deep Learning Medical Screening",
     achievement: "Top 50 — IIIT-Delhi HORIBA Hack4Health",
     description:
       "Two-track deep-learning screening system: tuberculosis detection from chest imaging and wound classification from computer vision, built on transfer-learned convolutional backbones.",
@@ -221,7 +221,7 @@ export const hackathons: Hackathon[] = [
     solution: "Formulated the route problem as QUBO, solved with QAOA on IBM Quantum hardware alongside a classical solver, served via FastAPI, Docker and MongoDB.",
     result: "A working hybrid quantum-classical routing service — Top 10 at the Microsoft Azure Hackathon.",
     project: "VahaanBandhu",
-    title: "VahaanBandhu",
+    title: "Quantum-Classical Logistics Optimization",
     achievement: "Top 10 — Microsoft Azure Hackathon",
     description:
       "Hybrid routing framework pairing QUBO/QAOA formulations run on IBM Quantum hardware with classical solvers, served through a FastAPI, Docker and MongoDB stack.",
@@ -252,6 +252,8 @@ export interface Internship {
   description: string;
   technologies: string[];
   outcomes: string[];
+  /** "Journey" — the write-up for this role. */
+  journeyUrl: string;
 }
 
 export const internships: Internship[] = [
@@ -264,7 +266,8 @@ export const internships: Internship[] = [
     description:
       "Designed and implemented PySpark ETL pipelines that transformed five synthetic banking datasets into analytics-ready Gold tables. Used medallion architecture, modular data validation and Delta Lake processing to reduce pipeline complexity.",
     technologies: ["PySpark", "Apache Spark", "Delta Lake", "Hadoop", "Hive", "Prefect", "Power BI", "Medallion architecture"],
-    outcomes: ["5 banking datasets transformed to Gold tables", "Medallion architecture reduced pipeline complexity"]
+    outcomes: ["5 banking datasets transformed to Gold tables", "Medallion architecture reduced pipeline complexity"],
+    journeyUrl: "https://lnkd.in/p/deUxrh9e"
   },
   {
     id: "finideas",
@@ -275,7 +278,8 @@ export const internships: Internship[] = [
     description:
       "Developed equity-market prediction models using more than 15 engineered features. Applied XGBoost, LightGBM and time-series validation to improve forecasting reliability.",
     technologies: ["Python", "XGBoost", "LightGBM", "Feature engineering", "Quantitative research", "Time-series validation"],
-    outcomes: ["15+ engineered features", "Improved forecasting reliability via time-series validation"]
+    outcomes: ["15+ engineered features", "Improved forecasting reliability via time-series validation"],
+    journeyUrl: "https://www.linkedin.com/in/debshata-choudhury-b2593a271/overlay/Position/2906408296/treasury/?profileId=ACoAAEKGOM0BqsoiTX-qDg4GYbdXpg47vqsfaAc"
   },
   {
     id: "excelerate",
@@ -286,7 +290,8 @@ export const internships: Internship[] = [
     description:
       "Analysed learning outcomes for more than 500 participants and developed Looker Studio dashboards to improve programme reporting and decision-making.",
     technologies: ["Data analysis", "Looker Studio", "Dashboard design", "Reporting", "Business insights"],
-    outcomes: ["500+ participant outcomes analysed", "Looker Studio dashboards adopted for reporting"]
+    outcomes: ["500+ participant outcomes analysed", "Looker Studio dashboards adopted for reporting"],
+    journeyUrl: "https://www.linkedin.com/posts/debshata-choudhury-b2593a271_data-analyst-associate-internship-excelerate-activity-7323352942156173314-E9hM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKGOM0BqsoiTX-qDg4GYbdXpg47vqsfaAc"
   }
 ];
 

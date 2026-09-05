@@ -29,8 +29,8 @@ export function IdentityMap() {
   const activeNode = NODES.find((n) => n.id === active);
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="relative">
+    <div className="grid items-center gap-6 sm:grid-cols-[minmax(0,260px)_1fr]">
+      <div className="relative w-full max-w-[260px]">
         <svg viewBox="0 0 400 340" role="img" aria-label="Technical identity map connecting Research, Engineering, Data, Quantum, AI and Visualisation" className="h-auto w-full">
           {EDGES.map(([a, b]) => {
             const nodeA = NODES.find((n) => n.id === a)!;
@@ -84,8 +84,23 @@ export function IdentityMap() {
         </svg>
       </div>
 
-      <div className="min-h-[3rem] border-l-2 border-accent pl-4 font-mono text-xs uppercase tracking-label text-mute" aria-live="polite">
-        {activeNode ? activeNode.tools.join(" · ") : "Hover or focus a node to reveal related tools and experience"}
+      <div className="min-h-[7rem] border-l-2 border-accent pl-4" aria-live="polite">
+        {activeNode ? (
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-[10px] uppercase tracking-label text-accent">{activeNode.label}</span>
+            <ul className="flex flex-col gap-1">
+              {activeNode.tools.map((tool) => (
+                <li key={tool} className="font-body text-sm leading-snug text-ink">
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <span className="font-mono text-[10px] uppercase leading-relaxed tracking-label text-mute">
+            Hover or focus a node to reveal related tools and experience
+          </span>
+        )}
       </div>
 
       <ul className="sr-only">

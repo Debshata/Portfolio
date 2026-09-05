@@ -8,14 +8,14 @@ export function InternshipsSection() {
       <div className="mx-auto max-w-content px-5 md:px-10">
         <RecordFrame
           section="03"
-          title="Experience records"
+          title="Internship records"
           recordLabel={`${internships.length} RECORDS`}
           meta="CHRONOLOGICAL"
           footerPath="DC://ARCHIVE/EXPERIENCE"
           footerIndex={`03 / ${archive.totalRecords}`}
         >
           <h3 id="experience-heading" className="sr-only">
-            Experience records
+            Internship records
           </h3>
           <ExperiencePipeline internships={internships} />
         </RecordFrame>

@@ -53,7 +53,7 @@ export function ProjectsSection() {
                     : "border-hair text-mute hover:border-accent hover:text-accent-bright"
                 )}
               >
-                {entry.code}
+                {entry.project}
               </button>
             ))}
           </div>
@@ -63,8 +63,9 @@ export function ProjectsSection() {
               <div className="flex flex-col gap-2">
                 <span className="font-mono text-[10px] uppercase tracking-label text-accent">{project.category}</span>
                 <h4 className="font-display text-[clamp(1.5rem,3.2vw,2.4rem)] uppercase leading-tight tracking-tight text-ink">
-                  {project.title}
+                  {project.project}
                 </h4>
+                <p className="font-body text-[15px] leading-snug text-ink/85 md:text-base">{project.title}</p>
                 <span className="font-mono text-[11px] uppercase tracking-label text-accent-muted">
                   {project.achievement}
                 </span>

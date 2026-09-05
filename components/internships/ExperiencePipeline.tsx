@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown, MapPin } from "lucide-react";
 import type { Internship } from "@/data/portfolio";
 import { TechnicalLabel } from "@/components/ui/TechnicalLabel";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 import { cn } from "@/lib/utils";
 
 function InternshipNode({ internship, index, total }: { internship: Internship; index: number; total: number }) {
@@ -71,6 +72,9 @@ function InternshipNode({ internship, index, total }: { internship: Internship; 
                 </div>
               ))}
             </div>
+            <ExternalLink href={internship.journeyUrl} label={`Journey at ${internship.company}`}>
+              JOURNEY &rarr;
+            </ExternalLink>
           </div>
         )}
       </div>
