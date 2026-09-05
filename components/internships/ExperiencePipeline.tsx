@@ -18,7 +18,7 @@ function InternshipNode({ internship, index, total }: { internship: Internship; 
         <div
           className={cn(
             "flex h-9 w-9 shrink-0 items-center justify-center border font-mono text-xs",
-            isLast ? "border-accent bg-accent text-base" : "border-accent/60 bg-alt text-accent-bright"
+            isLast ? "border-accent bg-accent text-ground" : "border-accent/60 bg-alt text-accent-bright"
           )}
           aria-hidden
         >
@@ -51,7 +51,7 @@ function InternshipNode({ internship, index, total }: { internship: Internship; 
 
         {expanded && (
           <div id={panelId} className="mt-4 flex flex-col gap-4">
-            <p className="font-body text-base leading-relaxed text-ink">{internship.description}</p>
+            <p className="font-body text-[16px] leading-relaxed text-ink">{internship.description}</p>
             <ul className="flex flex-col gap-1">
               {internship.outcomes.map((outcome) => (
                 <li key={outcome} className="flex gap-2 font-body text-sm text-accent">

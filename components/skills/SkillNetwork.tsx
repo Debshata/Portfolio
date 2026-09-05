@@ -55,7 +55,7 @@ export function SkillNetwork() {
                       className={cn(
                         "focus-ring border px-3 py-1.5 font-mono text-xs tracking-wide transition-colors",
                         selected?.id === skill.id
-                          ? "border-accent bg-accent text-base"
+                          ? "border-accent bg-accent text-ground"
                           : "border-hair bg-alt/50 text-ink hover:border-accent/60"
                       )}
                     >

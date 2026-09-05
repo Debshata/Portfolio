@@ -21,7 +21,7 @@ export function EducationSection() {
             {degrees.map((degree, i) => (
               <li key={degree.id} className="relative">
                 <span
-                  className="absolute -left-[25px] top-2 h-2 w-2 border border-accent bg-base md:-left-[41px]"
+                  className="absolute -left-[25px] top-2 h-2 w-2 border border-accent bg-ground md:-left-[41px]"
                   aria-hidden
                 />
                 <div className="flex flex-wrap items-baseline justify-between gap-3">

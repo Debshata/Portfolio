@@ -36,7 +36,7 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
           className="object-contain"
         />
 
-        <span className="pointer-events-none absolute bottom-0 right-0 border-l border-t border-accent/30 bg-base/85 px-2.5 py-1 font-mono text-[10px] tracking-label text-accent">
+        <span className="pointer-events-none absolute bottom-0 right-0 border-l border-t border-accent/30 bg-ground/85 px-2.5 py-1 font-mono text-[10px] tracking-label text-accent">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
 
@@ -46,7 +46,7 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
               type="button"
               onClick={() => go(index - 1)}
               aria-label={`Previous image for ${projectName}`}
-              className="focus-ring absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-hair bg-base/85 text-ink transition-colors hover:border-accent hover:text-accent-bright"
+              className="focus-ring absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-hair bg-ground/85 text-ink transition-colors hover:border-accent hover:text-accent-bright"
             >
               <ChevronLeft size={16} aria-hidden />
             </button>
@@ -54,7 +54,7 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
               type="button"
               onClick={() => go(index + 1)}
               aria-label={`Next image for ${projectName}`}
-              className="focus-ring absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-hair bg-base/85 text-ink transition-colors hover:border-accent hover:text-accent-bright"
+              className="focus-ring absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-hair bg-ground/85 text-ink transition-colors hover:border-accent hover:text-accent-bright"
             >
               <ChevronRight size={16} aria-hidden />
             </button>

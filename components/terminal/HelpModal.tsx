@@ -24,7 +24,7 @@ export function HelpModal({ open, onClose }: HelpModalProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-base/80 px-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-ground/80 px-4" onClick={onClose}>
       <div
         ref={dialogRef}
         role="dialog"

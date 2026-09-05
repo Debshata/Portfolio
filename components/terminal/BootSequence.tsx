@@ -71,7 +71,7 @@ export function BootSequence() {
       role="status"
       aria-live="polite"
       aria-label={`Loading archive, ${pct} percent`}
-      className="fixed inset-0 z-[110] flex flex-col items-center justify-center gap-10 bg-base px-6 transition-opacity duration-500 ease-standard"
+      className="fixed inset-0 z-[110] flex flex-col items-center justify-center gap-10 bg-ground px-6 transition-opacity duration-500 ease-standard"
     >
       {phase === "load" ? (
         <>

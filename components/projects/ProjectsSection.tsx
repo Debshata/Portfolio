@@ -49,7 +49,7 @@ export function ProjectsSection() {
                 className={cn(
                   "dc-press focus-ring min-h-[40px] border px-3 py-2 font-mono text-[10px] uppercase tracking-label transition-colors duration-micro ease-micro",
                   i === index
-                    ? "border-accent bg-accent text-base"
+                    ? "border-accent bg-accent text-ground"
                     : "border-hair text-mute hover:border-accent hover:text-accent-bright"
                 )}
               >
@@ -65,7 +65,7 @@ export function ProjectsSection() {
                 <h4 className="font-display text-[clamp(1.5rem,3.2vw,2.4rem)] uppercase leading-tight tracking-tight text-ink">
                   {project.project}
                 </h4>
-                <p className="font-body text-[15px] leading-snug text-accent md:text-base">{project.title}</p>
+                <p className="font-body text-[15px] leading-snug text-accent md:text-[16px]">{project.title}</p>
                 <span className="font-mono text-[11px] uppercase tracking-label text-accent-muted">
                   {project.achievement}
                 </span>

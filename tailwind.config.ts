@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         // DC Archives palette — from the design system sheet
-        base: "#02070F",
+        ground: "#02070F",
         bg: "#06101F",
         alt: "#09182A",
         panel: "#0D1E32",

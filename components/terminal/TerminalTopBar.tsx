@@ -11,10 +11,10 @@ export function TerminalTopBar() {
   const current = navSections.find((s) => s.id === active);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-hair bg-base/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-hair bg-ground/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-2 px-5 py-3 md:px-10">
         <a href="#main-content" className="focus-ring flex flex-col leading-none">
-          <span className="font-display text-sm uppercase tracking-tight text-ink md:text-base">
+          <span className="font-display text-sm uppercase tracking-tight text-ink md:text-[15px]">
             {profile.name}
           </span>
           <span className="mt-1 font-mono text-[10px] uppercase tracking-wide text-accent-muted">

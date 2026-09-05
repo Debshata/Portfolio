@@ -9,7 +9,7 @@ interface ArchiveLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 const STYLES: Record<Variant, string> = {
-  primary: "border-accent bg-accent text-base hover:bg-accent-bright",
+  primary: "border-accent bg-accent text-ground hover:bg-accent-bright",
   secondary: "border-hair bg-transparent text-ink hover:border-accent hover:text-accent-bright"
 };
 
