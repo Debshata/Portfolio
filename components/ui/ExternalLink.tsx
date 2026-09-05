@@ -18,7 +18,7 @@ export function ExternalLink({ href, children, className, label, onClick }: Exte
     return (
       <span
         className={cn(
-          "focus-ring inline-flex cursor-not-allowed items-center gap-1.5 font-mono text-sm text-mute opacity-60",
+          "focus-ring inline-flex min-h-[44px] cursor-not-allowed items-center gap-1.5 font-mono text-sm text-mute opacity-60 sm:min-h-0",
           className
         )}
         aria-label={`${label ?? "Link"} not yet available`}
@@ -38,7 +38,7 @@ export function ExternalLink({ href, children, className, label, onClick }: Exte
       onClick={onClick}
       aria-label={label ? `${label} (opens in new tab)` : undefined}
       className={cn(
-        "focus-ring inline-flex items-center gap-1.5 font-mono text-sm text-accent-bright underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent",
+        "focus-ring inline-flex min-h-[44px] items-center gap-1.5 font-mono text-sm text-accent-bright underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent sm:min-h-0",
         className
       )}
     >

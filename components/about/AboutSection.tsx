@@ -82,14 +82,14 @@ export function AboutSection() {
                 {CONTACT_FIELDS.map(([label, value, href]) => {
                   const pending = href.startsWith("ADD_");
                   return (
-                    <li key={label} className="flex items-baseline gap-3 font-mono text-[11px]">
+                    <li key={label} className="flex min-h-[44px] items-center gap-3 font-mono text-[11px] sm:min-h-0 sm:items-baseline">
                       <span className="w-20 shrink-0 uppercase tracking-label text-accent-muted">{label}</span>
                       {pending ? (
                         <span className="text-mute opacity-60">{value}</span>
                       ) : (
                         <a
                           href={href}
-                          className="focus-ring text-ink underline decoration-hair underline-offset-4 hover:text-accent-bright"
+                          className="focus-ring inline-flex min-h-[44px] items-center break-all text-ink underline decoration-hair underline-offset-4 hover:text-accent-bright sm:min-h-0"
                         >
                           {value}
                         </a>

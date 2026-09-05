@@ -71,11 +71,15 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
             aria-selected={i === index}
             aria-label={`Show image ${i + 1} of ${total}`}
             onClick={() => go(i)}
-            className={cn(
-              "focus-ring h-1.5 flex-1 border transition-colors",
-              i === index ? "border-accent bg-accent" : "border-hair bg-alt hover:border-accent/50"
-            )}
-          />
+            className="focus-ring flex h-11 flex-1 items-center sm:h-4"
+          >
+            <span
+              className={cn(
+                "h-1.5 w-full border transition-colors",
+                i === index ? "border-accent bg-accent" : "border-hair bg-alt hover:border-accent/50"
+              )}
+            />
+          </button>
         ))}
       </div>
 

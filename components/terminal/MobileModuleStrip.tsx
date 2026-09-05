@@ -28,7 +28,7 @@ export function MobileModuleStrip({ onNavigate }: { onNavigate: (id: string) => 
             }}
             aria-current={isActive ? "true" : undefined}
             className={cn(
-              "dc-press focus-ring min-h-[36px] shrink-0 whitespace-nowrap border px-3 py-1.5 font-mono text-[10px] uppercase tracking-label transition-colors",
+              "dc-press focus-ring min-h-[44px] shrink-0 whitespace-nowrap border px-3 py-1.5 font-mono text-[10px] uppercase tracking-label transition-colors",
               isActive ? "border-accent bg-accent text-ground" : "border-hair text-mute"
             )}
           >

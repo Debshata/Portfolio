@@ -13,7 +13,7 @@ export function TerminalTopBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-hair bg-ground/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-2 px-5 py-3 md:px-10">
-        <a href="#main-content" className="focus-ring flex flex-col leading-none">
+        <a href="#main-content" className="focus-ring flex min-h-[44px] flex-col justify-center leading-none sm:min-h-0">
           <span className="font-display text-sm uppercase tracking-tight text-ink md:text-[15px]">
             {profile.name}
           </span>

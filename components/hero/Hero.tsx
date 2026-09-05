@@ -29,8 +29,8 @@ export function Hero() {
         <div className="grid gap-12 pt-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="flex flex-col gap-8">
             <h1 className="font-display uppercase leading-[0.88] tracking-tight text-ink">
-              <span className="block text-[clamp(3rem,8vw,7.4rem)]">Debshata</span>
-              <span className="block text-[clamp(3rem,8vw,7.4rem)] text-accent">Choudhury</span>
+              <span className="block text-[clamp(2.4rem,12vw,7.4rem)]">Debshata</span>
+              <span className="block text-[clamp(2.4rem,12vw,7.4rem)] text-accent">Choudhury</span>
             </h1>
 
             <div className="flex flex-wrap gap-2">

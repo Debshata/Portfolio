@@ -53,7 +53,7 @@ export function SkillNetwork() {
                       }}
                       aria-pressed={selected?.id === skill.id}
                       className={cn(
-                        "focus-ring border px-3 py-1.5 font-mono text-xs tracking-wide transition-colors",
+                        "focus-ring inline-flex min-h-[44px] items-center border px-3 py-1.5 font-mono text-xs tracking-wide transition-colors sm:min-h-0",
                         selected?.id === skill.id
                           ? "border-accent bg-accent text-ground"
                           : "border-hair bg-alt/50 text-ink hover:border-accent/60"

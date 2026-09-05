@@ -30,7 +30,7 @@ export function IdentityMap() {
 
   return (
     <div className="grid items-center gap-6 sm:grid-cols-[minmax(0,260px)_1fr]">
-      <div className="relative w-full max-w-[260px]">
+      <div className="relative w-full sm:max-w-[260px]">
         <svg viewBox="0 0 400 340" role="img" aria-label="Technical identity map connecting Research, Engineering, Data, Quantum, AI and Visualisation" className="h-auto w-full">
           {EDGES.map(([a, b]) => {
             const nodeA = NODES.find((n) => n.id === a)!;
@@ -67,6 +67,14 @@ export function IdentityMap() {
                 onMouseLeave={() => setActive(null)}
                 onFocus={() => setActive(node.id)}
                 onBlur={() => setActive(null)}
+                // Touch has no hover: tapping toggles the node instead.
+                onClick={() => setActive((current) => (current === node.id ? null : node.id))}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActive((current) => (current === node.id ? null : node.id));
+                  }
+                }}
               />
               <text
                 x={node.x}
@@ -98,7 +106,7 @@ export function IdentityMap() {
           </div>
         ) : (
           <span className="font-mono text-[10px] uppercase leading-relaxed tracking-label text-mute">
-            Hover or focus a node to reveal related tools and experience
+            Tap or hover a node to reveal related tools and experience
           </span>
         )}
       </div>

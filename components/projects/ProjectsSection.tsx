@@ -47,7 +47,7 @@ export function ProjectsSection() {
                 aria-selected={i === index}
                 onClick={() => select(i)}
                 className={cn(
-                  "dc-press focus-ring min-h-[40px] border px-3 py-2 font-mono text-[10px] uppercase tracking-label transition-colors duration-micro ease-micro",
+                  "dc-press focus-ring min-h-[44px] border px-3 py-2 font-mono text-[10px] uppercase tracking-label transition-colors duration-micro ease-micro",
                   i === index
                     ? "border-accent bg-accent text-ground"
                     : "border-hair text-mute hover:border-accent hover:text-accent-bright"

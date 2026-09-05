@@ -54,7 +54,7 @@ export function GltfSceneFrame<P extends object>({
   return (
     <div ref={ref} className={className}>
       <div className="border border-hair bg-panel/30">
-        <div className="flex items-center justify-between border-b border-hair px-3 py-2 font-mono text-[10px] uppercase tracking-label text-accent-muted">
+        <div className="flex flex-col gap-0.5 border-b border-hair px-3 py-2 font-mono text-[10px] uppercase tracking-label text-accent-muted sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <span>{label}</span>
           <span className="text-mute">{readoutLeft}</span>
         </div>
