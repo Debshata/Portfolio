@@ -15,7 +15,7 @@ const NODES: IdentityNode[] = [
   { id: "engineering", label: "Engineering", tools: ["PySpark", "Software Engineering", "Delta Lake"], x: 360, y: 140 },
   { id: "data", label: "Data", tools: ["SQL", "Statistics", "Feature Engineering"], x: 320, y: 300 },
   { id: "quantum", label: "Quantum", tools: ["Qiskit", "Variational Algorithms", "QCBM"], x: 80, y: 300 },
-  { id: "ai", label: "AI", tools: ["PyTorch", "XGBoost", "LightGBM"], x: 40, y: 140 },
+  { id: "ai", label: "AI", tools: ["PyTorch", "TensorFlow", "Keras"], x: 40, y: 140 },
   { id: "visualisation", label: "Visualisation", tools: ["Power BI", "Looker Studio", "Plotly"], x: 200, y: 210 }
 ];
 
