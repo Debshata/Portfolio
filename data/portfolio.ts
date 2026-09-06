@@ -23,7 +23,7 @@ export const profile: Profile = {
   location: "New Delhi, India",
   degrees: ["B.Tech Computer Science", "B.S. Data Science"],
   currentFocus: "Quantum machine learning and scalable data systems",
-  portrait: "/images/debshata-profile.png"
+  portrait: "/images/debshata-portrait.jpg"
 };
 
 export interface Links {
