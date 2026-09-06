@@ -118,6 +118,8 @@ export interface Hackathon {
   secondaryMetricLabel?: string;
   secondaryMetricValue?: string;
   technologies: string[];
+  /** Short prototype write-up shown under the record summary. */
+  writeup: string[];
   images: ProjectImage[];
   githubUrl: string;
   /** "About Event" — the write-up / announcement for the hackathon itself. */
@@ -142,6 +144,11 @@ export const hackathons: Hackathon[] = [
     secondaryMetricLabel: "Engineered features",
     secondaryMetricValue: "28",
     technologies: ["Python", "XGBoost", "Feature engineering", "Cross-validated optimisation"],
+    writeup: [
+      "A smart digital platform connecting students, NGOs and corporates to drive verified water-resilience and climate-action initiatives.",
+      "It uses AI-based volunteer matching, geo-tagged events, QR/GPS verification and gamified incentives to increase participation.",
+      "Corporate dashboards quantify CSR/ESG impact and support transparent BRSR-aligned reporting."
+    ],
     images: [
       { src: "/images/projects/dropconnect/dropconnect-01.png" },
       { src: "/images/projects/dropconnect/dropconnect-02.png" },
@@ -172,6 +179,11 @@ export const hackathons: Hackathon[] = [
     secondaryMetricLabel: "Engineered features",
     secondaryMetricValue: "112",
     technologies: ["LightGBM", "XGBoost", "Soft voting ensemble", "Feature engineering"],
+    writeup: [
+      "An AI-powered platform for discovering, classifying and interactively exploring exoplanets using NASA-related datasets.",
+      "It combines machine learning, astrophysics and visualization to classify planetary candidates and explore atmospheric, orbital and discovery characteristics.",
+      "The prototype makes exoplanet research accessible to students, researchers and astronomy enthusiasts through a unified interactive interface."
+    ],
     images: [
       { src: "/images/projects/exoplanetarium/exoplanetarium-01.png" },
       { src: "/images/projects/exoplanetarium/exoplanetarium-02.png" },
@@ -186,20 +198,25 @@ export const hackathons: Hackathon[] = [
   {
     id: "medical-screening",
     code: "PROJECT-03",
-    category: "Deep learning · Medical imaging",
-    challenge: "Two distinct screening problems — tuberculosis from chest imaging and wound assessment — with limited labelled medical data.",
+    category: "Deep learning · Audio & medical imaging",
+    challenge: "Two distinct screening problems — tuberculosis from cough voice recordings and wound assessment — with limited labelled medical data.",
     solution: "Transfer-learned ResNet34, ConvNeXt and EfficientNetV2 backbones across both tracks using PyTorch and Keras.",
     result: "83.87% TB accuracy and 82.02% wound CV accuracy — Top 50 at IIIT-Delhi HORIBA Hack4Health.",
     project: "MediConnect",
     title: "Deep Learning Medical Screening",
     achievement: "Top 50 — IIIT-Delhi HORIBA Hack4Health",
     description:
-      "Two-track deep-learning screening system: tuberculosis detection from chest imaging and wound classification from computer vision, built on transfer-learned convolutional backbones.",
+      "Two-track deep-learning screening system: tuberculosis detection from cough voice recordings and wound classification from computer vision, built on transfer-learned convolutional backbones.",
     metricLabel: "TB screening accuracy",
     metricValue: "83.87%",
     secondaryMetricLabel: "Wound CV accuracy",
     secondaryMetricValue: "82.02%",
     technologies: ["PyTorch", "Keras", "ResNet34", "ConvNeXt", "EfficientNetV2"],
+    writeup: [
+      "A rural health-tech platform connecting underserved clinics with urban doctors, diagnostic services and affordable medicine networks.",
+      "It combines telemedicine with AI-assisted triage, including cough, tongue and wound analysis, alongside multilingual and offline-ready healthcare support.",
+      "The prototype converts basic rural patient visits into structured digital care journeys while reducing unnecessary hospital travel."
+    ],
     images: [
       { src: "/images/projects/mediconnect/mediconnect-01.png" },
       { src: "/images/projects/mediconnect/mediconnect-02.png" },
@@ -230,6 +247,11 @@ export const hackathons: Hackathon[] = [
     secondaryMetricLabel: "Executed on",
     secondaryMetricValue: "IBM Quantum",
     technologies: ["Qiskit", "QUBO / QAOA", "FastAPI", "Docker", "MongoDB"],
+    writeup: [
+      "A smart agricultural logistics platform connecting farmers, truckers and input dealers to improve movement of crops and agricultural supplies.",
+      "Its routing engine combines classical optimisation with QUBO-based quantum optimisation and validated IBM Quantum hardware experiments.",
+      "The prototype focuses on finding efficient, practical logistics routes while using quantum computation as an experimental optimisation component rather than claiming quantum advantage."
+    ],
     images: [
       { src: "/images/projects/vahaanbandhu/vahaanbandhu-01.png" },
       { src: "/images/projects/vahaanbandhu/vahaanbandhu-02.png" },
@@ -525,13 +547,55 @@ export const profileLinks: { label: string; url: string }[] = [
   { label: "LEETCODE", url: links.leetcode }
 ];
 
+export interface Recommendation {
+  id: string;
+  name: string;
+  title: string;
+  relationship: string;
+  date: string;
+  profileUrl: string;
+  body: string[];
+}
+
+export const recommendations: Recommendation[] = [
+  {
+    id: "jorge-plazas",
+    name: "Jorge Plazas",
+    title: "Mathematical Physicist | Professor at Universidad Francisco de Vitoria",
+    relationship: "Jorge was Debshata's mentor",
+    date: "March 16, 2026",
+    profileUrl: "https://www.linkedin.com/in/jorgeplazas/",
+    body: [
+      "I worked with Debshata on a software project which began as a part of the Qiskit Advocate Mentorship Program, a focused program where our small team developed a set of tools for the implementation of Quantum Circuirt Born Machines. Even though we collaborated entirely online, it was a very enjoyable and smooth experience, thanks in large part to him.",
+      "During the program, Debshata stood out for his proactivity and strong sense of responsibility. He consistently took initiative and followed through on commitments, which made a real difference in moving the project forward and achieving its goals.",
+      "On the more technical side, Debshata combines a solid expertise with a strong set of analytical skills. He is able to quickly understands complex problems and turn them into well-structured solutions. On top of that, he is approachable, collaborative, and simply great to work with.",
+      "I look forward to working with Debshata again and strongly recommend him to any team looking for a capable and dependable professional."
+    ]
+  },
+  {
+    id: "natalie-hawkins",
+    name: "Natalie Hawkins",
+    title:
+      "Tier 2 Qiskit Advocate, Software Engineer, Data Science/Statistics, Quantum Community Organizer",
+    relationship: "Natalie was Debshata's mentor",
+    date: "February 2, 2026",
+    profileUrl: "https://www.linkedin.com/in/natalie-hawkins-seattle/",
+    body: [
+      "Debshata has helped us bring Quantum Circuit Born Machines described in papers to life in Qiskit code as a mentee on a project in the Qiskit Advocate Mentorship Program (QAMP2025). As the primary coder on a small team, he was able to work very independently and to produce high quality work, very quickly, ensuring that we stayed on track with the program requirements.",
+      "As a mentor, I have enjoyed working with Debshata. He proactively makes suggestions and helps to check program details to ensure that we're running smoothly. I am appreciative that he has been able to find time to work on this volunteer-based project designed to become part of the Qiskit open-source ecosystem.",
+      "It has been a fun learning experience for all of us, and I anticipate that we will continue our global collaboration and interaction for many years. Thank you, Debshata!"
+    ]
+  }
+];
+
 export const navSections = [
   { id: "about", label: "About", code: "01" },
   { id: "education", label: "Education", code: "02" },
   { id: "experience", label: "Experience", code: "03" },
   { id: "skills", label: "Skills", code: "04" },
   { id: "projects", label: "Projects", code: "05" },
-  { id: "publications", label: "Research Work", code: "06" }
+  { id: "publications", label: "Research Work", code: "06" },
+  { id: "recommendations", label: "Recommendations", code: "07" }
 ] as const;
 
 export const archive = {
@@ -539,7 +603,7 @@ export const archive = {
   archiveName: "PERSONNEL ARCHIVE",
   recordId: "DC-001",
   clearance: "PUBLIC",
-  totalRecords: "06"
+  totalRecords: "07"
 } as const;
 
 export const moduleIndex: Record<string, string> = {
@@ -548,5 +612,6 @@ export const moduleIndex: Record<string, string> = {
   experience: "03",
   skills: "04",
   projects: "05",
-  publications: "06"
+  publications: "06",
+  recommendations: "07"
 };

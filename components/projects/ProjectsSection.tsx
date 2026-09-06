@@ -73,6 +73,15 @@ export function ProjectsSection() {
 
               <p className="font-body text-[15px] leading-[1.7] text-mute md:text-[17px]">{project.description}</p>
 
+              <div className="flex flex-col gap-3 border-l-2 border-accent pl-4">
+                <span className="font-mono text-[10px] uppercase tracking-label text-accent">THE PROTOTYPE</span>
+                {project.writeup.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)} className="font-body text-[15px] leading-[1.7] text-ink">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
               <dl className="flex flex-col divide-y divide-hair border-y border-hair">
                 {[
                   ["CHALLENGE", project.challenge],
