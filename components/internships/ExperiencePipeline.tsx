@@ -36,7 +36,7 @@ function InternshipNode({ internship, index, total }: { internship: Internship; 
           className="focus-ring flex w-full flex-col gap-1 text-left"
         >
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="font-display text-lg font-semibold text-ink md:text-xl">{internship.role}</span>
+            <span className="font-display text-lg text-ink md:text-xl">{internship.role}</span>
             <ChevronDown size={18} className={cn("shrink-0 text-accent transition-transform", expanded && "rotate-180")} aria-hidden />
           </div>
           <span className="font-mono text-xs uppercase tracking-label text-accent">{internship.company}</span>

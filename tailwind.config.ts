@@ -20,7 +20,7 @@ const config: Config = {
         hair: "rgba(255,216,74,0.22)"
       },
       fontFamily: {
-        display: ["Iosevka", "ui-monospace", "monospace"],
+        display: ["VT323", "Iosevka", "ui-monospace", "monospace"],
         body: ["Iosevka", "ui-monospace", "monospace"],
         mono: ["Iosevka", "ui-monospace", "monospace"]
       },

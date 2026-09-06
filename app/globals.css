@@ -131,11 +131,13 @@ input:focus-visible,
   letter-spacing: -0.04em;
 }
 
-/* Archivo Black carried its own weight; Iosevka needs it stated. Sits in the
-   components layer so a utility like font-semibold still wins where used. */
+/* VT323 is a single-weight pixel face: asking for a heavier cut only triggers
+   synthetic bolding, which smears the glyph grid. Keep it at 400 and give the
+   letterforms a little air instead of the tight tracking the old display face
+   was set with. */
 @layer components {
   .font-display {
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: 0.01em;
   }
 }

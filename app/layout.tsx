@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-// Iosevka carries the whole interface — display, body and the terminal labels.
-// Only the weights actually used are imported, latin subset only.
+// VT323 sets the headings; Iosevka carries body copy and terminal labels.
+// VT323 ships a single weight and nothing else needs a heavier Iosevka cut,
+// so one 400 face each — latin subset only.
+import "@fontsource/vt323/latin-400.css";
 import "@fontsource/iosevka/latin-400.css";
-import "@fontsource/iosevka/latin-600.css";
-import "@fontsource/iosevka/latin-800.css";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
 import { CRTOverlay } from "@/components/ui/CRTOverlay";
