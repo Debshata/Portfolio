@@ -130,3 +130,12 @@ input:focus-visible,
   line-height: 1;
   letter-spacing: -0.04em;
 }
+
+/* Archivo Black carried its own weight; Iosevka needs it stated. Sits in the
+   components layer so a utility like font-semibold still wins where used. */
+@layer components {
+  .font-display {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+}

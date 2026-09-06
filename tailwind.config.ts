@@ -20,9 +20,9 @@ const config: Config = {
         hair: "rgba(255,216,74,0.22)"
       },
       fontFamily: {
-        display: ["var(--font-display)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"]
+        display: ["Iosevka", "ui-monospace", "monospace"],
+        body: ["Iosevka", "ui-monospace", "monospace"],
+        mono: ["Iosevka", "ui-monospace", "monospace"]
       },
       maxWidth: { content: "1440px" },
       letterSpacing: { label: "0.18em", wide: "0.24em" },

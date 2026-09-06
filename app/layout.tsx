@@ -1,31 +1,14 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Archivo, IBM_Plex_Mono } from "next/font/google";
+// Iosevka carries the whole interface — display, body and the terminal labels.
+// Only the weights actually used are imported, latin subset only.
+import "@fontsource/iosevka/latin-400.css";
+import "@fontsource/iosevka/latin-600.css";
+import "@fontsource/iosevka/latin-800.css";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
 import { CRTOverlay } from "@/components/ui/CRTOverlay";
 import { TerminalProvider } from "@/lib/terminal/TerminalContext";
 import { TerminalShell } from "@/components/terminal/TerminalShell";
-
-const display = Archivo_Black({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400"],
-  display: "swap"
-});
-
-const body = Archivo({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap"
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-  display: "swap"
-});
 
 const siteUrl = "https://debshata.dev";
 
@@ -65,7 +48,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
