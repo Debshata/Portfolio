@@ -1,5 +1,6 @@
 import { Hero } from "@/components/hero/Hero";
 import { AboutSection } from "@/components/about/AboutSection";
+import { IdentityMapSection } from "@/components/about/IdentityMapSection";
 import { EducationSection } from "@/components/education/EducationSection";
 import { InternshipsSection } from "@/components/internships/InternshipsSection";
 import { SkillsSection } from "@/components/skills/SkillsSection";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <AboutSection />
+        <IdentityMapSection />
         <EducationSection />
         <InternshipsSection />
         <SkillsSection />

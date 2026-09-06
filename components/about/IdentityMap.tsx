@@ -29,8 +29,8 @@ export function IdentityMap() {
   const activeNode = NODES.find((n) => n.id === active);
 
   return (
-    <div className="grid items-center gap-6 sm:grid-cols-[minmax(0,260px)_1fr]">
-      <div className="relative w-full sm:max-w-[260px]">
+    <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)] lg:gap-12">
+      <div className="relative mx-auto w-full max-w-[560px] lg:mx-0">
         <svg viewBox="0 0 400 340" role="img" aria-label="Technical identity map connecting Research, Engineering, Data, Quantum, AI and Visualisation" className="h-auto w-full">
           {EDGES.map(([a, b]) => {
             const nodeA = NODES.find((n) => n.id === a)!;
@@ -54,7 +54,7 @@ export function IdentityMap() {
               <circle
                 cx={node.x}
                 cy={node.y}
-                r={active === node.id ? 30 : 26}
+                r={active === node.id ? 34 : 30}
                 fill={active === node.id ? "#FFD84A" : "#0D1E32"}
                 stroke="rgba(255,216,74,0.28)"
                 strokeWidth={1}
@@ -82,7 +82,7 @@ export function IdentityMap() {
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="pointer-events-none select-none font-mono"
-                fontSize={10}
+                fontSize={13}
                 fill={active === node.id ? "#02070F" : "#F5E8A8"}
               >
                 {node.label}
@@ -92,13 +92,13 @@ export function IdentityMap() {
         </svg>
       </div>
 
-      <div className="min-h-[7rem] border-l-2 border-accent pl-4" aria-live="polite">
+      <div className="min-h-[8rem] border-l-2 border-accent pl-5" aria-live="polite">
         {activeNode ? (
           <div className="flex flex-col gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-label text-accent">{activeNode.label}</span>
+            <span className="font-mono text-[11px] uppercase tracking-label text-accent">{activeNode.label}</span>
             <ul className="flex flex-col gap-1">
               {activeNode.tools.map((tool) => (
-                <li key={tool} className="font-body text-sm leading-snug text-ink">
+                <li key={tool} className="font-body text-[15px] leading-snug text-ink">
                   {tool}
                 </li>
               ))}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { profile, links, archive } from "@/data/portfolio";
 import { RecordFrame } from "@/components/ui/RecordFrame";
-import { IdentityMap } from "./IdentityMap";
 
 const FILE_FIELDS: [string, string][] = [
   ["NAME", "Debshata Choudhury"],
@@ -98,10 +97,6 @@ export function AboutSection() {
                   );
                 })}
               </ul>
-
-              <div className="border-t border-hair pt-6">
-                <IdentityMap />
-              </div>
             </div>
           </div>
         </RecordFrame>
