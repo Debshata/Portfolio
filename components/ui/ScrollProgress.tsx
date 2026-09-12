@@ -21,7 +21,7 @@ export function ScrollProgress() {
     <div
       className="absolute inset-x-0 bottom-0 h-[3px] bg-panel"
       role="progressbar"
-      aria-label="Scroll position through the system"
+      aria-label="Reading progress through the archive"
       aria-valuenow={Math.round(progress * 100)}
       aria-valuemin={0}
       aria-valuemax={100}

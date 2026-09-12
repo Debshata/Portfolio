@@ -1,25 +1,20 @@
 import { internships, archive } from "@/data/portfolio";
-import { RecordFrame } from "@/components/ui/RecordFrame";
+import { RecordSection } from "@/components/ui/RecordSection";
 import { ExperiencePipeline } from "./ExperiencePipeline";
 
 export function InternshipsSection() {
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="border-b border-hair py-14 md:py-20">
-      <div className="mx-auto max-w-content px-5 md:px-10">
-        <RecordFrame
-          section="03"
-          title="Internship records"
-          recordLabel={`${internships.length} RECORDS`}
-          meta="CHRONOLOGICAL"
-          footerPath="DC://ARCHIVE/EXPERIENCE"
-          footerIndex={`03 / ${archive.totalRecords}`}
-        >
-          <h3 id="experience-heading" className="sr-only">
-            Internship records
-          </h3>
-          <ExperiencePipeline internships={internships} />
-        </RecordFrame>
-      </div>
-    </section>
+    <RecordSection
+      id="experience"
+      section="03"
+      title="Internship records"
+      recordLabel={`${internships.length} RECORDS`}
+      meta="MOST RECENT FIRST"
+      footerPath="DC://ARCHIVE/EXPERIENCE"
+      footerIndex={`03 / ${archive.totalRecords}`}
+      headingId="experience-heading"
+    >
+      <ExperiencePipeline internships={internships} />
+    </RecordSection>
   );
 }

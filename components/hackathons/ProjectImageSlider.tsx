@@ -27,16 +27,16 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="relative aspect-square w-full overflow-hidden border border-hair bg-bg">
+      <div className="relative aspect-[4/3] w-full overflow-hidden border border-hair bg-bg">
         <Image
           src={current.src}
           alt={`${projectName} — image ${index + 1} of ${total}`}
           fill
-          sizes="(max-width: 768px) 90vw, 460px"
+          sizes="(max-width: 1024px) 92vw, 600px"
           className="object-contain"
         />
 
-        <span className="pointer-events-none absolute bottom-0 right-0 border-l border-t border-accent/30 bg-ground/85 px-2.5 py-1 font-mono text-[10px] tracking-label text-accent">
+        <span className="pointer-events-none absolute bottom-0 right-0 border-l border-t border-accent/30 bg-ground/85 px-2.5 py-1 font-mono text-meta text-accent">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
 
@@ -62,14 +62,13 @@ export function ProjectImageSlider({ images, projectName }: ProjectImageSliderPr
         )}
       </div>
 
-      <div className="flex flex-wrap gap-1.5" role="tablist" aria-label={`${projectName} image selector`}>
+      <div className="flex flex-wrap gap-1.5">
         {images.map((image, i) => (
           <button
             key={image.src}
             type="button"
-            role="tab"
-            aria-selected={i === index}
             aria-label={`Show image ${i + 1} of ${total}`}
+            aria-current={i === index}
             onClick={() => go(i)}
             className="focus-ring flex h-11 flex-1 items-center sm:h-4"
           >

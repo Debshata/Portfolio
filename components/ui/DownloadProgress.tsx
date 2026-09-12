@@ -16,7 +16,7 @@ export function DownloadProgress({ progress }: DownloadProgressProps) {
           style={{ width: `${pct}%` }}
         />
       </div>
-      <span className="font-mono text-[10px] uppercase tracking-label text-mute">
+      <span className="font-mono text-meta uppercase text-mute">
         {done ? "Transfer complete" : `Transferring résumé — ${pct}%`}
       </span>
     </div>

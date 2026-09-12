@@ -3,20 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --base: #02070f;
+  /* Navy structural ramp — four steps, darkest to lightest */
+  --ground: #02070f;
   --bg: #06101f;
   --alt: #09182a;
   --panel: #0d1e32;
+
+  /* Yellow accent — reserved for state, emphasis and action */
   --accent: #ffd84a;
   --accent-bright: #ffe66d;
   --accent-muted: #c8a93e;
+
+  /* Text ramp. `body` is `mute` raised one lightness step on its own hue
+     (218deg / 17% sat), so prose reads at 11.6:1 while `mute` stays the
+     dimmer metadata voice and cream `ink` becomes emphasis, not default. */
   --ink: #f5e8a8;
+  --body: #c3cad5;
   --mute: #8e9aaf;
+
   --hair: rgba(255, 216, 74, 0.22);
+  --hair-strong: rgba(255, 216, 74, 0.42);
+
+  /* Sticky chrome height — the nav rail and mobile strip offset from this
+     rather than each hard-coding a measured pixel value. */
+  --topbar: 60px;
 
   --micro: 180ms cubic-bezier(0.4, 0, 0.2, 1);
   --standard: 400ms cubic-bezier(0.22, 1, 0.36, 1);
   --cinematic: 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --topbar: 68px;
+  }
 }
 
 * {
@@ -25,12 +45,24 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anchor jumps clear the sticky chrome instead of hiding under it. */
+  scroll-padding-top: calc(var(--topbar) + 1rem);
 }
 
 body {
   position: relative;
-  background-color: var(--base);
-  color: var(--mute);
+  background-color: var(--ground);
+  color: var(--body);
+}
+
+/* Browser surfaces belong to the palette too, not to the UA defaults. */
+::selection {
+  background: var(--accent);
+  color: var(--ground);
+}
+
+:root {
+  caret-color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -52,7 +84,7 @@ body {
   top: 0;
   z-index: 120;
   background: var(--accent);
-  color: var(--base);
+  color: var(--ground);
   padding: 0.75rem 1.25rem;
   font-family: var(--font-mono);
   font-size: 0.8125rem;
@@ -97,13 +129,15 @@ input:focus-visible,
   }
 }
 
-/* Base grid + scanline atmosphere, deliberately faint */
+/* Measurement ground for the archive. The grid is the instrument surface the
+   records are plotted on — it reads as calibration, not decoration, which is
+   why it stays this faint and never animates. */
 .archive-ground {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-color: var(--base);
+  background-color: var(--ground);
   background-image:
     linear-gradient(rgba(255, 216, 74, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 216, 74, 0.035) 1px, transparent 1px);
@@ -122,22 +156,19 @@ input:focus-visible,
   );
 }
 
-.dc-watermark {
-  font-family: var(--font-display);
-  color: var(--accent);
-  opacity: 0.04;
-  font-size: 480px;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
 
-/* VT323 is a single-weight pixel face: asking for a heavier cut only triggers
-   synthetic bolding, which smears the glyph grid. Keep it at 400 and give the
-   letterforms a little air instead of the tight tracking the old display face
-   was set with. */
 @layer components {
+  /* VT323 is a single-weight pixel face: asking for a heavier cut only triggers
+     synthetic bolding, which smears the glyph grid. Keep it at 400 and give the
+     letterforms a little air instead. */
   .font-display {
     font-weight: 400;
     letter-spacing: 0.01em;
+  }
+
+  /* Record codes, indices and counts line up in columns when they share a
+     width — the archive reads as a system rather than as set text. */
+  .dc-code {
+    font-variant-numeric: tabular-nums;
   }
 }

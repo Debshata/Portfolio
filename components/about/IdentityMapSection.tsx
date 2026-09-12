@@ -1,34 +1,27 @@
-import { archive } from "@/data/portfolio";
-import { RecordFrame } from "@/components/ui/RecordFrame";
+import { RecordSection } from "@/components/ui/RecordSection";
 import { IdentityMap } from "./IdentityMap";
 
 /**
  * 01-A — the technical identity map. It was squeezed into a 260px column
  * inside the personnel file, where the node labels were unreadable; the "-A"
  * suffix follows the same continuation convention as the DC-001-A photograph.
+ * It reads as a continuation rather than a peer record, so it sits tight
+ * against 01 instead of taking a full record's air.
  */
 export function IdentityMapSection() {
   return (
-    <section
+    <RecordSection
       id="identity-map"
-      aria-labelledby="identity-map-heading"
-      className="border-b border-hair py-14 md:py-20"
+      section="01-A"
+      title="Identity map"
+      recordLabel="TECHNICAL DOMAINS"
+      meta="6 NODES / CONTINUATION OF 01"
+      footerPath="DC://ARCHIVE/IDENTITY-MAP"
+      footerIndex="CONT. OF 01"
+      headingId="identity-map-heading"
+      rhythm="close"
     >
-      <div className="mx-auto max-w-content px-5 md:px-10">
-        <RecordFrame
-          section="01-A"
-          title="Identity map"
-          recordLabel="TECHNICAL DOMAINS"
-          meta="6 NODES / FULLY CONNECTED"
-          footerPath="DC://ARCHIVE/IDENTITY-MAP"
-          footerIndex={`01-A / ${archive.totalRecords}`}
-        >
-          <h3 id="identity-map-heading" className="sr-only">
-            Technical identity map
-          </h3>
-          <IdentityMap />
-        </RecordFrame>
-      </div>
-    </section>
+      <IdentityMap />
+    </RecordSection>
   );
 }

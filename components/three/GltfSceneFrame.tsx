@@ -53,9 +53,12 @@ export function GltfSceneFrame<P extends object>({
 
   return (
     <div ref={ref} className={className}>
+      {/* The instrument frame is a genuine object — a readout panel with a
+          model inside it — so it keeps its box where the surrounding record
+          content does not. */}
       <div className="border border-hair bg-panel/30">
-        <div className="flex flex-col gap-0.5 border-b border-hair px-3 py-2 font-mono text-[10px] uppercase tracking-label text-accent-muted sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-          <span>{label}</span>
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-hair px-3 py-2 font-mono text-meta uppercase">
+          <span className="text-accent-muted">{label}</span>
           <span className="text-mute">{readoutLeft}</span>
         </div>
         <div className={cn("relative w-full", aspect)}>
@@ -72,14 +75,12 @@ export function GltfSceneFrame<P extends object>({
             </Suspense>
           ) : (
             <div className="flex h-full w-full items-center justify-center p-6 text-center">
-              <span className="font-mono text-[11px] uppercase tracking-label text-mute">
-                {fallbackLabel}
-              </span>
+              <span className="max-w-measure-sm font-mono text-label uppercase text-mute">{fallbackLabel}</span>
             </div>
           )}
           <span className="sr-only">{srDescription}</span>
         </div>
-        <div className="border-t border-hair px-3 py-1.5 text-right font-mono text-[10px] uppercase tracking-label text-mute">
+        <div className="border-t border-hair px-3 py-1.5 text-right font-mono text-meta uppercase text-mute">
           {readoutRight}
         </div>
       </div>

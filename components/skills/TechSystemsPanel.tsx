@@ -14,7 +14,7 @@ export function TechSystemsPanel() {
       label="DC://ARCHIVE/NEURAL-NET"
       readoutLeft="FIG. 04 — ARTIFICIAL NEURAL NETWORK"
       readoutRight="DRAG TO ORBIT"
-      aspect="aspect-[16/10]"
+      aspect="aspect-[4/3]"
       cameraPosition={[0, 0.4, 6.4]}
       fov={45}
       fallbackLabel="Artificial neural network — 3D view unavailable"
